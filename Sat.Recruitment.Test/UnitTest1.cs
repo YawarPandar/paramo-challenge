@@ -1,10 +1,7 @@
-using System;
-using System.Dynamic;
-
-using Microsoft.AspNetCore.Mvc;
-
+using Sat.Recruitment.Abstractions.Helpers;
 using Sat.Recruitment.Api.Controllers;
-
+using Sat.Recruitment.Models.View;
+using Sat.Recruitment.Test.Helpers;
 using Xunit;
 
 namespace Sat.Recruitment.Test
@@ -12,28 +9,17 @@ namespace Sat.Recruitment.Test
     [CollectionDefinition("Tests", DisableParallelization = true)]
     public class UnitTest1
     {
-        [Fact]
-        public void Test1()
+        [Theory]
+        [InlineData("Mike", "mike@gmail.com", "Av. Juan G", "+349 1122354215", "Normal", 124, true, IConstants.USER_CREATED)]
+        [InlineData("Agustina", "Agustina@gmail.com", "Av. Juan G", "+349 1122354215", "Normal", 124, false, IConstants.DUPLICATED_USER)]
+        public void UserCreation_Test(string name, string email, string address, string phone, string userType, decimal money, bool success, string returnedMessage)
         {
-            var userController = new UsersController();
+            var userAbstraction = Resources.GetUserAbstraction();
 
-            var result = userController.CreateUser("Mike", "mike@gmail.com", "Av. Juan G", "+349 1122354215", "Normal", "124").Result;
-
-
-            Assert.Equal(true, result.IsSuccess);
-            Assert.Equal("User Created", result.Errors);
-        }
-
-        [Fact]
-        public void Test2()
-        {
-            var userController = new UsersController();
-
-            var result = userController.CreateUser("Agustina", "Agustina@gmail.com", "Av. Juan G", "+349 1122354215", "Normal", "124").Result;
-
-
-            Assert.Equal(false, result.IsSuccess);
-            Assert.Equal("The user is duplicated", result.Errors);
+            var userController = new UsersController(userAbstraction);
+            var result = userController.CreateUser(new User { Name = name, Address = address, Phone = phone, UserType = userType, Money = money, Email = email }).Result;
+            Assert.Equal(success, result.IsSuccess);
+            Assert.Equal(returnedMessage, result.Message);
         }
     }
 }
