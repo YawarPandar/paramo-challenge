@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sat.Recruitment.Api.Configurations;
+using Sat.Recruitment.Models.Configuration;
 
 namespace Sat.Recruitment.Api
 {
@@ -25,6 +26,7 @@ namespace Sat.Recruitment.Api
             ServicesConfiguration.ConfigureServices(services);
             services.AddControllers();
             services.AddSwaggerGen();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

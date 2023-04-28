@@ -44,7 +44,6 @@ namespace Sat.Recruitment.BusinessLayer.Implements
             }
             catch(Exception ex)
             {
-                Debug.WriteLine(ex.Message);
                 return new BaseResult<User> { IsSuccess = false, Message = ex.Message };
             }
         }
