@@ -32,7 +32,7 @@ namespace Sat.Recruitment.Repository
             List<UserDto> _users = new List<UserDto>();
             var path = AppDomain.CurrentDomain.BaseDirectory + _configuration.GetConnectionString("DefaultConnection");
 
-            if (!File.Exists(path)) { throw _errorHandler.RaiseException(INVALID_DATA_SOURCE);  }
+            if (!File.Exists(path)) { throw _errorHandler.GetCustomException(INVALID_DATA_SOURCE);  }
 
             FileStream fileStream = new FileStream(path, FileMode.Open);
             StreamReader reader = new StreamReader(fileStream);

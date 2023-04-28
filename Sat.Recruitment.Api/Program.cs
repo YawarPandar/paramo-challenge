@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace Sat.Recruitment.Api
 {
-    public  static class Program
+    public static partial class Program
     {
         public static void Main(string[] args)
         {

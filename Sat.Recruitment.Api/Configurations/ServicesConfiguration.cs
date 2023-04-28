@@ -17,6 +17,7 @@ namespace Sat.Recruitment.Api.Configurations
             services.AddTransient<IValidations, Validations>();
             services.AddTransient<IFunctions, Functions>();
             services.AddTransient<IErrorHandler, ErrorHandler>();
+            services.AddTransient<ILogger, Logger>();
         }
     }
 }

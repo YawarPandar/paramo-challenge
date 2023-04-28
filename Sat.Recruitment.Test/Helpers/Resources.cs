@@ -6,6 +6,9 @@ using Sat.Recruitment.BusinessLayer.Helpers;
 using Sat.Recruitment.BusinessLayer.Implements;
 using Sat.Recruitment.Repository;
 using System.IO;
+using Moq;
+using Microsoft.Extensions.Options;
+using Sat.Recruitment.Models.Configuration;
 
 namespace Sat.Recruitment.Test.Helpers
 {
@@ -13,7 +16,12 @@ namespace Sat.Recruitment.Test.Helpers
     {
         public static IUsers GetUserAbstraction()
         {
-            return new Users(GetValidationsAbstraction(), GetFunctionsAbstraction(), GetUserRepositoryAbstraction(), GetErrorHandlerAbstraction());
+            Mock<IOptions<AppSettings>> appSettingsMock = new Mock<IOptions<AppSettings>>();
+            appSettingsMock.Setup(x => x.Value).Returns(new AppSettings { LogFilePath = "", SaveLog = true });
+
+            Logger logger = new Logger(appSettingsMock.Object);
+
+            return new Users(GetValidationsAbstraction(), GetFunctionsAbstraction(), GetUserRepositoryAbstraction(), GetErrorHandlerAbstraction(), logger);
         }
         private static IValidations GetValidationsAbstraction()
         {

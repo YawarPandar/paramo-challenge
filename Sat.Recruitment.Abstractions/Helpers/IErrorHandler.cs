@@ -4,6 +4,6 @@ namespace Sat.Recruitment.Abstractions.Helpers
 {
     public interface IErrorHandler
     {
-        Exception RaiseException(string message);
+        Exception GetCustomException(string message);
     }
 }

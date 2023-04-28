@@ -22,7 +22,7 @@ namespace Sat.Recruitment.BusinessLayer.Implements
             }
 
             if (!Enum.TryParse(user.UserType, out UserType userType)) 
-                throw _errorHandler.RaiseException(INVALID_USER_TYPE);
+                throw _errorHandler.GetCustomException(INVALID_USER_TYPE);
 
             switch (userType)
             {
@@ -51,7 +51,7 @@ namespace Sat.Recruitment.BusinessLayer.Implements
         }
         public string NormalizeEmail(string email)
         {
-            if (!IsValid(email)) throw _errorHandler.RaiseException(INVALID_EMAIL);
+            if (!IsValid(email)) throw _errorHandler.GetCustomException(INVALID_EMAIL);
 
             var aux = email.Split(new char[] { '@' }, StringSplitOptions.RemoveEmptyEntries);
             var atIndex = aux[0].IndexOf("+", StringComparison.Ordinal);

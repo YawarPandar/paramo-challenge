@@ -3,5 +3,6 @@
     public class AppSettings
     {
         public bool SaveLog { get; set; }
+        public string LogFilePath { get; set; }
     }
 }
