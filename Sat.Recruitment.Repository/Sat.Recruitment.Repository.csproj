@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sat.Recruitment.Abstractions\Sat.Recruitment.Abstractions.csproj" />
-    <ProjectReference Include="..\Sat.Recruitment.BusinessLayer\Sat.Recruitment.BusinessLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,7 +2,7 @@
 
 namespace Sat.Recruitment.Abstractions.Helpers
 {
-    public interface IErrorHandler
+    public interface IErrorHandlerService
     {
         Exception GetCustomException(string message);
     }

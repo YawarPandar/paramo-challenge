@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sat.Recruitment.Api.Configurations;
+using Sat.Recruitment.Configuration;
 using Sat.Recruitment.Models.Configuration;
 
 namespace Sat.Recruitment.Api
@@ -23,7 +23,7 @@ namespace Sat.Recruitment.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ServicesConfiguration.ConfigureServices(services);
+            ConfigurationService.ConfigureServices(services);
             services.AddControllers();
             services.AddSwaggerGen();
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));

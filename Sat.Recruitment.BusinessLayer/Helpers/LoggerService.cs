@@ -7,10 +7,10 @@ using System.IO;
 
 namespace Sat.Recruitment.BusinessLayer.Helpers
 {
-    public class Logger : ILogger
+    public class LoggerService : ILoggerService
     {
         private readonly IOptions<AppSettings> _settings;
-        public Logger(IOptions<AppSettings> settings)
+        public LoggerService(IOptions<AppSettings> settings)
         {
             _settings = settings;
         }

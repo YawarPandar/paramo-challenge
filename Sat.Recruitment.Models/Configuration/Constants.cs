@@ -1,6 +1,6 @@
-﻿namespace Sat.Recruitment.Abstractions.Helpers
+﻿namespace Sat.Recruitment.Models.Configuration
 {
-    public interface IConstants
+    public class Constants
     {
         public const string DUPLICATED_USER = "User is duplicated";
         public const string USER_CREATED = "User Created";

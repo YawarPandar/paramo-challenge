@@ -5,15 +5,15 @@ using Sat.Recruitment.Models.Dto;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using static Sat.Recruitment.Abstractions.Helpers.IConstants;
+using static Sat.Recruitment.Models.Configuration.Constants;
 
 namespace Sat.Recruitment.Repository
 {
     public class UserRepository : IUserRepository
     {
         private readonly IConfiguration _configuration;
-        private readonly IErrorHandler _errorHandler;
-        public UserRepository(IConfiguration configuration, IErrorHandler errorHandler)
+        private readonly IErrorHandlerService _errorHandler;
+        public UserRepository(IConfiguration configuration, IErrorHandlerService errorHandler)
         {
             _configuration = configuration;
             _errorHandler = errorHandler;

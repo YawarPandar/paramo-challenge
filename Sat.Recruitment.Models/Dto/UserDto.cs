@@ -10,29 +10,24 @@ namespace Sat.Recruitment.Models.Dto
         public string Phone { get; set; }
         public string UserType { get; set; }
         public decimal Money { get; set; }
-        public static UserDto FromUser(User user)
+        protected static decimal Percentage { get; set; }
+        protected void FromUser(User user) 
         {
-            return new UserDto
-            {
-                Name = user.Name,
-                Email = user.Email, 
-                Address = user.Address,
-                Phone = user.Phone,
-                UserType = user.UserType,
-                Money = user.Money
-            };
+            Name = user.Name;
+            Email = user.Email;
+            Address = user.Address;
+            Phone = user.Phone;
+            UserType = user.UserType;
+            Money = user.Money * Percentage;
         }
-        public static User ToUser(UserDto user)
+        public static User ToUser(UserDto user) => new User
         {
-            return new User
-            {
                 Name = user.Name,
                 Email = user.Email,
                 Address = user.Address,
                 Phone = user.Phone,
                 UserType = user.UserType,
                 Money = user.Money
-            };
-        }
+        };        
     }
 }

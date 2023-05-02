@@ -6,13 +6,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Api", "Sat.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Test", "Sat.Recruitment.Test\Sat.Recruitment.Test.csproj", "{42E696E9-2672-4B91-AD96-353A69F7219C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.BusinessLayer", "Sat.Recruitment.BusinessLayer\Sat.Recruitment.BusinessLayer.csproj", "{3F63DBC4-A45D-4B76-AF99-4DCEDBF2BA92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.BusinessLayer", "Sat.Recruitment.BusinessLayer\Sat.Recruitment.BusinessLayer.csproj", "{3F63DBC4-A45D-4B76-AF99-4DCEDBF2BA92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Repository", "Sat.Recruitment.Repository\Sat.Recruitment.Repository.csproj", "{3396608C-8C9D-4059-BF2C-936EEF773CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Repository", "Sat.Recruitment.Repository\Sat.Recruitment.Repository.csproj", "{3396608C-8C9D-4059-BF2C-936EEF773CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Abstractions", "Sat.Recruitment.Abstractions\Sat.Recruitment.Abstractions.csproj", "{8EBFC544-9436-4605-A8B9-6DC99184F6A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Abstractions", "Sat.Recruitment.Abstractions\Sat.Recruitment.Abstractions.csproj", "{8EBFC544-9436-4605-A8B9-6DC99184F6A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Models", "Sat.Recruitment.Models\Sat.Recruitment.Models.csproj", "{6C5A2A97-1749-4F22-AD27-132F3D4579F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Models", "Sat.Recruitment.Models\Sat.Recruitment.Models.csproj", "{6C5A2A97-1749-4F22-AD27-132F3D4579F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Configuration", "Sat.Recruitment.Configuration\Sat.Recruitment.Configuration.csproj", "{C71813B1-BC2D-4BDD-9937-2C2ECE70ECA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{6C5A2A97-1749-4F22-AD27-132F3D4579F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C5A2A97-1749-4F22-AD27-132F3D4579F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C5A2A97-1749-4F22-AD27-132F3D4579F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C71813B1-BC2D-4BDD-9937-2C2ECE70ECA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71813B1-BC2D-4BDD-9937-2C2ECE70ECA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71813B1-BC2D-4BDD-9937-2C2ECE70ECA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71813B1-BC2D-4BDD-9937-2C2ECE70ECA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

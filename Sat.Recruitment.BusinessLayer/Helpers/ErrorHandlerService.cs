@@ -4,7 +4,7 @@ using System;
 
 namespace Sat.Recruitment.BusinessLayer.Helpers
 {
-    public class ErrorHandler : IErrorHandler
+    public class ErrorHandlerService : IErrorHandlerService
     {
         public Exception GetCustomException(string message)
         {

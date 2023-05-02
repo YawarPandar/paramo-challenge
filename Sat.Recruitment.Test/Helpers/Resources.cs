@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Sat.Recruitment.Abstractions.Business;
 using Sat.Recruitment.Abstractions.Helpers;
-using Sat.Recruitment.Abstractions.Repositories;
 using Sat.Recruitment.BusinessLayer.Helpers;
 using Sat.Recruitment.BusinessLayer.Implements;
 using Sat.Recruitment.Repository;
@@ -14,30 +13,16 @@ namespace Sat.Recruitment.Test.Helpers
 {
     public static class Resources
     {
-        public static IUsers GetUserAbstraction()
+        public static IUserService GetUserAbstraction()
         {
+            IConfiguration _configuration = GetConfiguration();
             Mock<IOptions<AppSettings>> appSettingsMock = new Mock<IOptions<AppSettings>>();
+            IErrorHandlerService errorHandler = new ErrorHandlerService();
             appSettingsMock.Setup(x => x.Value).Returns(new AppSettings { LogFilePath = "", SaveLog = true });
 
-            Logger logger = new Logger(appSettingsMock.Object);
+            LoggerService logger = new LoggerService(appSettingsMock.Object);
 
-            return new Users(GetValidationsAbstraction(), GetFunctionsAbstraction(), GetUserRepositoryAbstraction(), GetErrorHandlerAbstraction(), logger);
-        }
-        private static IValidations GetValidationsAbstraction()
-        {
-            return new Validations();
-        }
-        private static IFunctions GetFunctionsAbstraction()
-        {
-            return new Functions(GetErrorHandlerAbstraction());
-        }
-        private static IErrorHandler GetErrorHandlerAbstraction()
-        {
-            return new ErrorHandler();
-        }
-        private static IUserRepository GetUserRepositoryAbstraction()
-        {
-            return new UserRepository(GetConfiguration(), GetErrorHandlerAbstraction());
+            return new UserService(new ValidationService(new FunctionService(errorHandler)), new UserRepository(_configuration, errorHandler), errorHandler, logger);
         }
         private static IConfiguration GetConfiguration()
         {

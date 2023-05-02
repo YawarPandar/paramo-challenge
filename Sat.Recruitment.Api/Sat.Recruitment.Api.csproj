@@ -11,9 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sat.Recruitment.Abstractions\Sat.Recruitment.Abstractions.csproj" />
-    <ProjectReference Include="..\Sat.Recruitment.BusinessLayer\Sat.Recruitment.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Sat.Recruitment.Configuration\Sat.Recruitment.Configuration.csproj" />
     <ProjectReference Include="..\Sat.Recruitment.Models\Sat.Recruitment.Models.csproj" />
-    <ProjectReference Include="..\Sat.Recruitment.Repository\Sat.Recruitment.Repository.csproj" />
   </ItemGroup>
 
 

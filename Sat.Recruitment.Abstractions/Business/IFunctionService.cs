@@ -2,9 +2,8 @@
 
 namespace Sat.Recruitment.Abstractions.Business
 {
-    public interface IFunctions
+    public interface IFunctionService
     {
-        void UpdateGif(ref UserDto user);
         string NormalizeEmail(string email);
     }
 }

@@ -6,18 +6,18 @@ using Sat.Recruitment.BusinessLayer.Helpers;
 using Sat.Recruitment.BusinessLayer.Implements;
 using Sat.Recruitment.Repository;
 
-namespace Sat.Recruitment.Api.Configurations
+namespace Sat.Recruitment.Configuration
 {
-    public static class ServicesConfiguration
+    public static class ConfigurationService
     {
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IUsers, Users>();
-            services.AddTransient<IValidations, Validations>();
-            services.AddTransient<IFunctions, Functions>();
-            services.AddTransient<IErrorHandler, ErrorHandler>();
-            services.AddTransient<ILogger, Logger>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IValidationService, ValidationService>();
+            services.AddTransient<IFunctionService, FunctionService>();
+            services.AddTransient<IErrorHandlerService, ErrorHandlerService>();
+            services.AddTransient<ILoggerService, LoggerService>();
         }
     }
 }
